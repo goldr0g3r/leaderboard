@@ -13,9 +13,9 @@ const LoginPage = () => {
               <form className="flip-card__form" action="">
                 <input
                   className="flip-card__input"
-                  name="email"
-                  placeholder="Email"
-                  type="email"
+                  name="ntid"
+                  placeholder="NTID"
+                  type="text"
                 />
                 <input
                   className="flip-card__input"
@@ -36,9 +36,9 @@ const LoginPage = () => {
                 />
                 <input
                   className="flip-card__input"
-                  name="email"
-                  placeholder="Email"
-                  type="email"
+                  name="ntid"
+                  placeholder="NTID"
+                  type="text"
                 />
                 <input
                   className="flip-card__input"
