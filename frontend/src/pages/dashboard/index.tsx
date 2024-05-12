@@ -11,6 +11,7 @@ import {
 
 import React, { useState, useEffect } from "react";
 import { allCats, Cat, CatWithImage } from "../../interface";
+import Card from "../../components/Card";
 
 const mockCats = [
   { name: "Whiskers", photo: mcqueen, points: 1000 },
@@ -117,70 +118,73 @@ const Dashboard = () => {
     }
   }
   return (
-    <div className="container">
-      <div className="leaders">
-        <h2>Today's Top 15</h2>
-        <ul>
-          {topThreeCats ? (
-            topThreeCats.map((cat, i) => (
-              <li key={cat.name}>
-                <div
-                  className={`lead-cats ${
-                    cat.name === getNewLeader(i, cat) ? "active" : ""
-                  }`}
-                >
-                  <div className="photos">
-                    <img
-                      className="lead-cats__photo"
-                      src={cat.image}
-                      alt={cat.name}
-                    />
-                  </div>
-                  <div className={`podium pod-${i + 1}`}>
-                    <div
-                      className="ranking-lead"
-                      style={{ backgroundColor: colors[i] }}
-                    >
-                      {i === 0 ? "3" : i === 1 ? "1" : "2"}
+    <div className="leaderboard">
+      <div className="container">
+        <div className="leaders">
+          <h2>Today's Top 15</h2>
+          <ul>
+            {topThreeCats ? (
+              topThreeCats.map((cat, i) => (
+                <li key={cat.name}>
+                  <div
+                    className={`lead-cats ${
+                      cat.name === getNewLeader(i, cat) ? "active" : ""
+                    }`}
+                  >
+                    <div className="photos">
+                      <img
+                        className="lead-cats__photo"
+                        src={cat.image}
+                        alt={cat.name}
+                      />
                     </div>
-                    <h4>{cat.name}</h4>
-                    <p>{cat.points} points</p>
+                    <div className={`podium pod-${i + 1}`}>
+                      <div
+                        className="ranking-lead"
+                        style={{ backgroundColor: colors[i] }}
+                      >
+                        {i === 0 ? "3" : i === 1 ? "1" : "2"}
+                      </div>
+                      <h4>{cat.name}</h4>
+                      <p>{cat.points} points</p>
+                    </div>
                   </div>
-                </div>
-              </li>
-            ))
-          ) : (
-            <div>Loading</div>
-          )}
-        </ul>
-      </div>
+                </li>
+              ))
+            ) : (
+              <div>Loading</div>
+            )}
+          </ul>
+        </div>
 
-      <div className="board">
-        <h2>Leaderboard</h2>
-        <ul>
-          {allCats ? (
-            allCats.map((cat, i) => (
-              <CatListItem
-                key={cat.name}
-                cat={cat}
-                rank={i}
-                color={leaderboardColors[i]}
-                image={
-                  i === 0
-                    ? first_place_medal
-                    : i === 1
-                    ? second_place_medal
-                    : i === 2
-                    ? third_place_medal
-                    : undefined
-                }
-              />
-            ))
-          ) : (
-            <div>Loading</div>
-          )}
-        </ul>
+        <div className="board">
+          <h2>Leaderboard</h2>
+          <ul>
+            {allCats ? (
+              allCats.map((cat, i) => (
+                <CatListItem
+                  key={cat.name}
+                  cat={cat}
+                  rank={i}
+                  color={leaderboardColors[i]}
+                  image={
+                    i === 0
+                      ? first_place_medal
+                      : i === 1
+                      ? second_place_medal
+                      : i === 2
+                      ? third_place_medal
+                      : undefined
+                  }
+                />
+              ))
+            ) : (
+              <div>Loading</div>
+            )}
+          </ul>
+        </div>
       </div>
+      <Card description="game1" title="main game" rankings={[]} />
     </div>
   );
 };
