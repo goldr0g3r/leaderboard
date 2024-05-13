@@ -34,7 +34,6 @@ ul {
   font-weight: 700;
   font-family: "Amatic SC", sans-serif;
   color: var(--primary);
-  padding-bottom: 40px;
 }
 
 .board-description {
@@ -44,20 +43,6 @@ ul {
   font-family: "Amatic SC", sans-serif;
   justify-content: center;
   display: flex;
-}
-
-.ranking-lead {
-  position: absolute;
-  top: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 20;
-  width: 34px;
-  height: 34px;
-  background-color: #1cfa8b;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
 }
 
 .slide-move {
