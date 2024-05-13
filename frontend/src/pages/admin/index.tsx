@@ -4,8 +4,8 @@ import React, { useState } from "react";
 
 const AdminPage = () => {
   async function SearchUserCall() {
-      const [qurey, setQuery] = useState('');
-          const [filteredItems, setFilteredItems] = useState([]);      
+    const [qurey, setQuery] = useState("");
+    const [filteredItems, setFilteredItems] = useState([]);
 
     const searchInput = document.getElementById(
       "search-input"
@@ -33,7 +33,7 @@ const AdminPage = () => {
   };
 
   return (
-    <div className="container">
+    <div className="search-container">
       <form role="search" id="search-form">
         <label htmlFor="search-input">Search User</label>
         <input type="text" name="player" id="search-input" />
