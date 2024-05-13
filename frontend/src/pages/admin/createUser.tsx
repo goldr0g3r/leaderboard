@@ -1,8 +1,8 @@
-import "./style.css";
+import "style.css";
 
 import React, { useState } from "react";
-
-const AdminPage = () => {
+// takes in the search query and returns the api response and if not found returns a create user form
+const CreateUser = () => {
   async function SearchUserCall() {
     const [qurey, setQuery] = useState("");
     const [filteredItems, setFilteredItems] = useState([]);
@@ -50,37 +50,9 @@ const AdminPage = () => {
             placeholder="Score"
           />
           <button id="create-button">Edit</button>
-        </form>
-      </div>{" "}
-      {/* */}
-      <div className="edit-user">
-        <h2>Edit User</h2>
-        <form id="create-form">
-          <label htmlFor="create-input">Edit User</label>
-          <input
-            type="text"
-            name="player"
-            id="create-input"
-            placeholder="name"
-          />
-          <input
-            type="text"
-            name="player"
-            id="create-input"
-            placeholder="Department"
-          />
-          <input
-            type="text"
-            name="player"
-            id="create-input"
-            placeholder="Score"
-          />
 
-          <button id="create-button">Create</button>
         </form>
       </div>{" "}
     </div>
   );
 };
-
-export default AdminPage;
