@@ -3,6 +3,7 @@ import { connectDB } from "./config/mongodb";
 import helmet from "helmet";
 import morgan from "morgan";
 import router from "./router";
+import cors from "cors";
 
 const app: Express = express();
 
