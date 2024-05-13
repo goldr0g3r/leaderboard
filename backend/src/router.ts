@@ -3,6 +3,7 @@ import { IUser } from "./interfaces/IUser";
 import IApiResponse from "./interfaces/IApiResponse";
 import createUser from "./controllers/createUser";
 import getUser from "./controllers/getUser";
+import getLeaderboard from "./controllers/getLeaderboard";
 const router = Router();
 
 router.post(
@@ -51,5 +52,20 @@ router.get(
     });
   }
 );
+
+router.get("/leaderboard", async (req, res) => {
+  const response = await getLeaderboard();
+  if (!response)
+    return res.json({
+      status: false,
+      message: "Failed to get leaderboard",
+    });
+
+  return res.json({
+    status: true,
+    message: "Leaderboard found",
+    data: response,
+  });
+});
 
 export default router;
