@@ -1,11 +1,13 @@
-import "./data";
 import "./style.css";
 import { mcqueen, mater, fransisco } from "../../assets";
-
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Card from "../../components/Card";
-import { sampleData } from "./data";
-import { ILeaderboardUser } from "../../interface/ILeaderboard";
+import ILeaderboard, {
+  ILeaderboardUser,
+  ILeaderboardUserWithImage,
+} from "../../interface/ILeaderboard";
+import { api } from "../../api";
+import IApiResponse from "../../interface/IApiResponse";
 
 const colors = ["#d6a21e", "#d6cd1e", "#bbbbbb"];
 
@@ -55,7 +57,7 @@ const CatListItem = ({
 
 const Dashboard = () => {
   const [topThreeCats, setTopThreeCats] = useState<
-    ILeaderboardUser[] | undefined
+    ILeaderboardUserWithImage[] | undefined
   >(undefined);
   const [allCats, setAllCats] = useState<ILeaderboardUser[] | undefined>(
     undefined
@@ -65,8 +67,7 @@ const Dashboard = () => {
   // Replace with actual logic to fetch cats data
 
   async function findTopThreeCats(data: ILeaderboardUser[]) {
-    const sortedCats = data.sort((a, b) => b.points - a.points);
-    const topThree = sortedCats.slice(0, 3);
+    const topThree = data.slice(0, 3);
     setTopThreeCats([
       { ...topThree[2], image: mater },
       { ...topThree[0], image: mcqueen },
@@ -75,9 +76,11 @@ const Dashboard = () => {
   }
 
   async function fetchLeaderBoard() {
-    const response = mockCats;
-    setAllCats(response.filter((cat, index) => index > 2));
-    findTopThreeCats(response);
+    const response = await api.get<IApiResponse<ILeaderboard>>("/leaderboard");
+    console.log(response);
+
+    setAllCats(response.data.data?.overall.filter((user, index) => index > 2));
+    findTopThreeCats(response.data.data?.overall || []);
   }
 
   useEffect(() => {
@@ -88,12 +91,6 @@ const Dashboard = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  function getNewLeader(rank: number, cat: Cat) {
-    //select the cat with the highest points as the new leader
-    if (rank === 0) {
-      return cat.name;
-    }
-  }
   return (
     <div className="leaderboard">
       <div className="container">
@@ -103,11 +100,7 @@ const Dashboard = () => {
             {topThreeCats ? (
               topThreeCats.map((cat, i) => (
                 <li key={cat.name}>
-                  <div
-                    className={`lead-cats ${
-                      cat.name === getNewLeader(i, cat) ? "active" : ""
-                    }`}
-                  >
+                  <div className={`lead-cats`}>
                     <div className="photos">
                       <img
                         className="lead-cats__photo"
@@ -120,12 +113,12 @@ const Dashboard = () => {
                         className="ranking-lead"
                         style={{ backgroundColor: colors[i] }}
                       >
-                        {i === 0 ? "3" : i === 1 ? "1" : "2"}
+                        {cat.rank}
                       </div>
                       <h4>
                         {cat.name} ({cat.department})
                       </h4>
-                      <p>{cat.points} points</p>
+                      <p>{cat.score} points</p>
                     </div>
                   </div>
                 </li>
@@ -142,8 +135,7 @@ const Dashboard = () => {
               allCats.map((cat, i) => (
                 <CatListItem
                   key={cat.name}
-                  cat={cat}
-                  rank={i + 3}
+                  user={cat}
                   color={leaderboardColors[i + 3]}
                 />
               ))
@@ -154,36 +146,12 @@ const Dashboard = () => {
         </div>
       </div>
       <div className="games">
-        <Card
-          description="game1"
-          title="main game"
-          rankings={sampleData.rankings}
-        />
-        <Card
-          description="game2"
-          title="main game"
-          rankings={sampleData.rankings}
-        />
-        <Card
-          description="game3"
-          title="main game"
-          rankings={sampleData.rankings}
-        />
-        <Card
-          description="game4"
-          title="main game"
-          rankings={sampleData.rankings}
-        />
-        <Card
-          description="game5"
-          title="main game"
-          rankings={sampleData.rankings}
-        />
-        <Card
-          description="game6"
-          title="main game"
-          rankings={sampleData.rankings}
-        />
+        <Card description="game1" title="main game" rankings={[]} />
+        <Card description="game2" title="main game" rankings={[]} />
+        <Card description="game3" title="main game" rankings={[]} />
+        <Card description="game4" title="main game" rankings={[]} />
+        <Card description="game5" title="main game" rankings={[]} />
+        <Card description="game6" title="main game" rankings={[]} />
       </div>
     </div>
   );

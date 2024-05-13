@@ -3,32 +3,6 @@ import "./style.css";
 import React, { useState } from "react";
 
 const AdminPage = () => {
-  async function SearchUserCall() {
-    const [qurey, setQuery] = useState("");
-    const [user, setUser] = useState<any>(undefined);
-
-    const searchInput = document.getElementById(
-      "search-input"
-    ) as HTMLInputElement;
-    const searchButton = document.getElementById(
-      "search-button"
-    ) as HTMLButtonElement;
-
-    const searchInputValue = searchInput.value;
-    searchInput.value = "";
-    searchInput.focus();
-
-    if (searchInputValue === "") {
-      return;
-    }
-
-    console.log(data);
-  }
-
-  const handleClickEvent = (event: React.MouseEvent<HTMLButtonElement>) => {
-    SearchUserCall();
-  };
-
   return (
     <div className="search-container">
       <form className="form" role="search" id="search-form">

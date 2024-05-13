@@ -5,6 +5,7 @@ import createUser from "./controllers/createUser";
 import getUser from "./controllers/getUser";
 import getLeaderboard from "./controllers/getLeaderboard";
 import editUser from "./controllers/editUser";
+import ILeaderboard from "./interfaces/ILeaderboard";
 const router = Router();
 
 router.post(
@@ -54,20 +55,23 @@ router.get(
   }
 );
 
-router.get("/leaderboard", async (req, res) => {
-  const response = await getLeaderboard();
-  if (!response)
-    return res.json({
-      status: false,
-      message: "Failed to get leaderboard",
-    });
+router.get(
+  "/leaderboard",
+  async (req, res): Promise<Response<IApiResponse<ILeaderboard>>> => {
+    const response = await getLeaderboard();
+    if (!response)
+      return res.json({
+        status: false,
+        message: "Failed to get leaderboard",
+      });
 
-  return res.json({
-    status: true,
-    message: "Leaderboard found",
-    data: response,
-  });
-});
+    return res.json({
+      status: true,
+      message: "Leaderboard found",
+      data: response,
+    });
+  }
+);
 
 router.patch(
   "/user/edit/:ntid",

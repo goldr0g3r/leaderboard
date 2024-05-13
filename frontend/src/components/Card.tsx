@@ -24,13 +24,13 @@ const Card = (data: ICardProps) => {
                   className="ranking"
                   style={{ backgroundColor: topThreeColors[index].toString() }}
                 >
-                  {index + 1}
+                  {ranking.rank}
                 </div>
                 <div className="cat-item__info">
                   <h4>{ranking.name}</h4>
                 </div>
                 <div className="cat-item__points">
-                  <p>{ranking.points}</p>
+                  <p>{ranking.score}</p>
                 </div>
               </li>
             ))}
