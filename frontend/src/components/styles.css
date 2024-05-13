@@ -6,19 +6,6 @@
   box-sizing: border-box;
 }
 
-:root {
-  --primary: #a5004d;
-  --white: #f3f3f3;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul {
-  list-style: none;
-}
-
 .card {
   width: 400px;
   margin-top: 1rem;
