@@ -18,7 +18,6 @@ const Card = (data: ICardProps) => {
           <h2>{data.title}</h2>
           <div className="card board">
             <p className="board-description">{data.description}</p>
-            {/* <div className="cat-item__list"> */}
             {data.rankings.map((ranking, index) => (
               <li className="cat-item">
                 <div
@@ -35,7 +34,6 @@ const Card = (data: ICardProps) => {
                 </div>
               </li>
             ))}
-            {/* </div> */}
           </div>
         </div>
       </div>

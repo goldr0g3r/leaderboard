@@ -180,7 +180,31 @@ const Dashboard = () => {
           title="main game"
           rankings={sampleData.rankings}
         />
-        <Card description="game2" title="second game" rankings={[]} />
+        <Card
+          description="game2"
+          title="main game"
+          rankings={sampleData.rankings}
+        />
+        <Card
+          description="game3"
+          title="main game"
+          rankings={sampleData.rankings}
+        />
+        <Card
+          description="game4"
+          title="main game"
+          rankings={sampleData.rankings}
+        />
+        <Card
+          description="game5"
+          title="main game"
+          rankings={sampleData.rankings}
+        />
+        <Card
+          description="game6"
+          title="main game"
+          rankings={sampleData.rankings}
+        />
       </div>
     </div>
   );

@@ -21,36 +21,10 @@ ul {
 
 .card {
   width: 400px;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 .main-title {
   margin-bottom: 20px;
-}
-
-.game-leaderboard-card {
-  display: grid;
-  grid-template-rows: 400px 1fr;
-  grid-column-gap: 1em;
-  background-color: var(--primary);
-  background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  padding-top: 2em;
-  display: grid;
-  grid-template-rows: 20% 1fr;
-  justify-items: center;
-  margin-left: 2rem;
-  border-radius: 10px;
-  margin-top: 2rem;
-}
-.game-leaderboard-card__title {
-  text-align: center;
-  font-size: 3rem;
-  font-weight: 700;
-  padding-bottom: 2rem;
-  margin-bottom: 4rem;
-  font-family: "Amatic SC", sans-serif;
-  color: var(--white);
 }
 
 .game-leaderboard-card__description {
@@ -60,61 +34,7 @@ ul {
   font-weight: 700;
   font-family: "Amatic SC", sans-serif;
   color: var(--primary);
-
   padding-bottom: 40px;
-}
-
-.game-leaderboard-card__ranking {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.game-leaderboard-card__rankings {
-  width: 300px;
-  display: grid;
-  font-family: "Roboto", sans-serif;
-}
-
-.game-leaderboard-card__ranking__rank {
-  display: grid;
-  grid-template-columns: min-content 1fr min-content;
-  grid-template-rows: minmax(40px, 1fr);
-  grid-gap: 1em;
-  align-items: center;
-  border-bottom: 1px solid rgb(233, 233, 233);
-  transition: background-color 0.2s;
-  padding: 10px;
-  visibility: hidden;
-}
-.cat-item:hover {
-  background-color: hsla(0, 0%, 74%, 0.102);
-}
-
-.cat-item img {
-  height: 100%;
-  width: 100%;
-}
-
-.ranking_item_info h4 {
-  font-family: "Roboto", serif;
-  font-size: 1rem;
-  color: var(--primary);
-  margin-left: 20px;
-}
-.game-leaderboard-card__ranking__points {
-  text-align: right;
-}
-.game-leaderboard-card__ranking__points p {
-  font-size: 1rem;
-  color: rgb(37, 37, 37);
-  font-weight: 500;
-}
-.cat-item__points img {
-  width: 20px;
-  cursor: pointer;
-}
-.cat-item__points img:last-child {
-  transform: scaleY(-1);
 }
 
 .board-description {
@@ -124,20 +44,6 @@ ul {
   font-family: "Amatic SC", sans-serif;
   justify-content: center;
   display: flex;
-}
-
-.game-leaderboard-card__ranking__rank {
-  position: absolute;
-  bottom: 0;
-  right: -10px;
-  z-index: 10;
-  width: 20px;
-  height: 20px;
-  background-color: #1ca1fa;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 0.9rem;
 }
 
 .ranking-lead {
