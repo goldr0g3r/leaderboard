@@ -3,8 +3,7 @@ import "./App.css";
 import LoginPage from "./pages/login";
 import Dashboard from "./pages/dashboard";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Card from "./components/Card";
-
+import AdminPage from "./pages/admin";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -15,8 +14,8 @@ const router = createBrowserRouter([
     element: <Dashboard />,
   },
   {
-    path: "card",
-    element: <Card description="game1" title="main game" rankings={[]} />,
+    path: "admin",
+    element: <AdminPage />,
   },
 ]);
 
