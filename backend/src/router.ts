@@ -4,6 +4,7 @@ import IApiResponse from "./interfaces/IApiResponse";
 import createUser from "./controllers/createUser";
 import getUser from "./controllers/getUser";
 import getLeaderboard from "./controllers/getLeaderboard";
+import editUser from "./controllers/editUser";
 const router = Router();
 
 router.post(
@@ -67,5 +68,32 @@ router.get("/leaderboard", async (req, res) => {
     data: response,
   });
 });
+
+router.patch(
+  "/user/edit/:ntid",
+  async (req, res): Promise<Response<IApiResponse<IUser>>> => {
+    const body: IUser = req.body;
+    const ntid = req.params.ntid;
+
+    if (!ntid)
+      return res.json({
+        status: false,
+        message: "NTID is required",
+      });
+
+    const response = await editUser(ntid, body);
+    if (!response)
+      return res.json({
+        status: false,
+        message: "Failed to edit user",
+      });
+
+    return res.json({
+      status: true,
+      message: "User edited successfully",
+      data: response,
+    });
+  }
+);
 
 export default router;

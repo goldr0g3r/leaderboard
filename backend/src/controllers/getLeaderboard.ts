@@ -57,11 +57,11 @@ export default async function getLeaderboard(): Promise<ILeaderboard | false> {
         }
       }
 
-      gamesLeaderboard[i] = gameUsers;
+      gamesLeaderboard[i] = gameUsers.slice(0, 3);
     }
 
     return {
-      overall: overallLeaderboard,
+      overall: overallLeaderboard.slice(0, 15),
       games: gamesLeaderboard,
     };
   } catch (error) {
