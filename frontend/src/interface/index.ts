@@ -1,5 +1,6 @@
 export interface Cat {
   name: string;
+  department: string;
   points: number;
 }
 

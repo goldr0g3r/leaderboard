@@ -19,7 +19,7 @@ ul {
   list-style: none;
 }
 
-.game-leaderboard-card {
+/* .game-leaderboard-card {
   width: 100%;
   max-width: 600px;
   padding: 2em 0;
@@ -27,9 +27,15 @@ ul {
   grid-template-rows: 400px 1fr;
   grid-column-gap: 1em;
   margin-left: 5rem;
-}
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+} */
 
 .game-leaderboard-card {
+  display: grid;
+  grid-template-rows: 400px 1fr;
+  grid-column-gap: 1em;
+
   background-color: var(--primary);
   background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
   border-top-left-radius: 10px;
@@ -38,88 +44,44 @@ ul {
   display: grid;
   grid-template-rows: 20% 1fr;
   justify-items: center;
+  margin-left: 2rem;
+  border-radius: 10px;
+  margin-top: 2rem;
 }
 .game-leaderboard-card__title {
   text-align: center;
   font-size: 3rem;
   font-weight: 700;
-  padding-bottom: 40px;
+  padding-bottom: 2rem;
+  margin-bottom: 4rem;
   font-family: "Amatic SC", sans-serif;
   color: var(--white);
 }
 
 .game-leaderboard-card__description {
+  width: 100%;
   text-align: center;
   font-size: 2rem;
   font-weight: 700;
-  padding-top: 20px;
-  padding-bottom: 40px;
   font-family: "Amatic SC", sans-serif;
-  color: var(--white);
-}
-
-.game-leaderboard-card__rankings {
-  width: 420px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: flex-end;
-  grid-gap: 5px;
-}
-
-.lead-cats {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-}
-.lead-cats__photo {
-  width: 130px;
-  margin: 0 auto;
-}
-.lead-cats__photo img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-}
-.leaders li:first-child {
-  width: 108px;
-}
-.leaders li:nth-child(1) {
-  width: 130px;
-}
-.leaders li:last-child {
-  width: 145px;
-}
-.podium {
-  padding: 1em;
-  text-align: center;
-  background-color: var(--white);
-  height: 160px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  position: relative;
-}
-.podium h4 {
-  font-family: "Amatic SC", sans-serif;
-  font-size: 1.8rem;
   color: var(--primary);
-}
-.podium p {
-  color: rgb(73, 73, 73);
-  margin: 5px 0;
-  font-size: 0.9rem;
+
+  padding-bottom: 40px;
 }
 
-.pod-1 {
-  height: 100px;
+.game-leaderboard-card__ranking {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-.pod-3 {
-  height: 130px;
+.game-leaderboard-card__rankings {
+  width: 300px;
+  display: grid;
+  font-family: "Roboto", sans-serif;
 }
-
 .board {
   background-color: var(--white);
-  border-radius: 10px;
-  padding: 1em;
+  border-radius: 0px 0px 10px 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
@@ -144,6 +106,7 @@ ul {
   border-bottom: 1px solid rgb(233, 233, 233);
   transition: background-color 0.2s;
   padding: 10px;
+  visibility: hidden;
 }
 .cat-item:hover {
   background-color: hsla(0, 0%, 74%, 0.102);
@@ -155,35 +118,20 @@ ul {
   height: 100%;
   width: 100%;
 }
-.cat-item__photo {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background-color: var(--primary);
-  position: relative;
-}
 
-.cat-item__photos {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 50%;
-}
-
-.cat-item__info h4 {
-  font-family: "Amatic SC", serif;
-  font-size: 1.7rem;
+.ranking_item_info h4 {
+  font-family: "Roboto", serif;
+  font-size: 1rem;
   color: var(--primary);
   margin-left: 20px;
 }
-.cat-item__points {
+.game-leaderboard-card__ranking__points {
   text-align: right;
 }
-.cat-item__points p {
-  font-size: 1.5rem;
-  color: rgb(73, 73, 73);
+.game-leaderboard-card__ranking__points p {
+  font-size: 1rem;
+  color: rgb(37, 37, 37);
+  font-weight: 500;
 }
 .cat-item__points img {
   width: 20px;
@@ -204,7 +152,7 @@ ul {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
 }
 
 .ranking-lead {

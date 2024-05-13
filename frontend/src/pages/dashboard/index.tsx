@@ -12,12 +12,24 @@ import {
 import React, { useState, useEffect } from "react";
 import { allCats, Cat, CatWithImage } from "../../interface";
 import Card from "../../components/Card";
+import { sampleData } from "./data";
 
 const mockCats = [
-  { name: "Whiskers", photo: mcqueen, points: 1000 },
-  { name: "Furball", points: 90 },
-  { name: "Paws", points: 80 },
-  { name: "Paws2.0", points: 855 },
+  { name: "Whiskers", department: "EHV", photo: mcqueen, points: 1000 },
+  { name: "Furball", department: "EHV", points: 90 },
+  { name: "Paws", department: "EHV", points: 80 },
+  { name: "Paws2.0", department: "EHV", points: 855 },
+  { name: "Whiskers", department: "EHV", photo: mcqueen, points: 1000 },
+  { name: "Furball", department: "EHV", points: 90 },
+  { name: "Paws", department: "EHV", points: 80 },
+  { name: "Paws2.0", department: "EHV", points: 855 },
+  { name: "Whiskers", department: "EHV", photo: mcqueen, points: 1000 },
+  { name: "Furball", department: "EHV", points: 90 },
+  { name: "Paws", department: "EHV", points: 80 },
+  { name: "Paws2.0", department: "EHV", points: 855 },
+  { name: "Whiskers", department: "EHV", photo: mcqueen, points: 1000 },
+  { name: "Furball", department: "EHV", points: 90 },
+  { name: "Paws", department: "EHV", points: 80 },
 ];
 const colors = ["#d6a21e", "#d6cd1e", "#bbbbbb"];
 
@@ -51,25 +63,18 @@ const CatListItem = ({
   image?: string;
 }) => {
   const rankOrder = rank + 1;
-  const colorOrder = colors[rank];
 
   return (
     <li className="cat-item">
-      <div className="cat-item__photo">
-        <div className="ranking" style={{ backgroundColor: colorOrder }}>
-          {rankOrder}
-        </div>
-        <div
-          className="cat-item__photos"
-          style={{
-            backgroundColor: color,
-          }}
-        >
-          {image && <img src={image} alt="medal" />}
-        </div>
+      {/* <div className="cat-item__photo"> */}
+      <div className="ranking" style={{ backgroundColor: color }}>
+        {rankOrder}
       </div>
+      {/* </div> */}
       <div className="cat-item__info">
-        <h4>{cat.name}</h4>
+        <h4>
+          {cat.name} ({cat.department}){" "}
+        </h4>
       </div>
       <div className="cat-item__points">
         <p>{cat.points}</p>
@@ -99,7 +104,7 @@ const Dashboard = () => {
 
   async function fetchLeaderBoard() {
     const response = mockCats;
-    setAllCats(response);
+    setAllCats(response.filter((cat, index) => index > 2));
     findTopThreeCats(response);
   }
 
@@ -145,7 +150,9 @@ const Dashboard = () => {
                       >
                         {i === 0 ? "3" : i === 1 ? "1" : "2"}
                       </div>
-                      <h4>{cat.name}</h4>
+                      <h4>
+                        {cat.name} ({cat.department})
+                      </h4>
                       <p>{cat.points} points</p>
                     </div>
                   </div>
@@ -158,24 +165,14 @@ const Dashboard = () => {
         </div>
 
         <div className="board">
-          <h2>Leaderboard</h2>
           <ul>
             {allCats ? (
               allCats.map((cat, i) => (
                 <CatListItem
                   key={cat.name}
                   cat={cat}
-                  rank={i}
-                  color={leaderboardColors[i]}
-                  image={
-                    i === 0
-                      ? first_place_medal
-                      : i === 1
-                      ? second_place_medal
-                      : i === 2
-                      ? third_place_medal
-                      : undefined
-                  }
+                  rank={i + 3}
+                  color={leaderboardColors[i + 3]}
                 />
               ))
             ) : (
@@ -184,7 +181,14 @@ const Dashboard = () => {
           </ul>
         </div>
       </div>
-      <Card description="game1" title="main game" rankings={[]} />
+      <div className="games">
+        <Card
+          description="game1"
+          title="main game"
+          rankings={sampleData.rankings}
+        />
+        <Card description="game2" title="second game" rankings={[]} />
+      </div>
     </div>
   );
 };

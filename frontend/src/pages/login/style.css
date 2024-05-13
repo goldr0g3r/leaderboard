@@ -14,7 +14,7 @@
 }
 /* switch card */
 .switch {
-  transform: translateY(200px);
+  transform: translateY(-150px);
   position: relative;
   display: flex;
   flex-direction: column;

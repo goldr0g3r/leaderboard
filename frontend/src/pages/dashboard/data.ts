@@ -1,3 +1,5 @@
+import { ICardProps } from "../../components/Card";
+
 export const cat = [
   {
     name: "Milo",
@@ -30,3 +32,25 @@ export const cat = [
     points: 90,
   },
 ];
+
+export const sampleData: ICardProps = {
+  title: "Main Game",
+  description: "This is the main game",
+  rankings: [
+    {
+      name: "John Doe",
+      department: "EHV",
+      points: 1000,
+    },
+    {
+      name: "Jane Doe",
+      department: "EHV",
+      points: 900,
+    },
+    {
+      name: "John Smith",
+      department: "EHV",
+      points: 800,
+    },
+  ],
+};
