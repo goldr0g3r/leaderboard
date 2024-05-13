@@ -1,11 +1,11 @@
 import React from "react";
-import ILeaderboad from "../interface/ILeaderboard";
+import { ILeaderboardUser } from "../interface/ILeaderboard";
 import "./styles.css";
 
 export interface ICardProps {
   title: string;
   description: string;
-  rankings: ILeaderboad[];
+  rankings: ILeaderboardUser[];
 }
 
 const Card = (data: ICardProps) => {

@@ -3,27 +3,10 @@ import "./style.css";
 import { mcqueen, mater, fransisco } from "../../assets";
 
 import React, { useState, useEffect } from "react";
-import { Cat, CatWithImage } from "../../interface";
 import Card from "../../components/Card";
 import { sampleData } from "./data";
+import { ILeaderboardUser } from "../../interface/ILeaderboard";
 
-const mockCats = [
-  { name: "Whiskers", department: "EHV", photo: mcqueen, points: 1000 },
-  { name: "Furball", department: "EHV", points: 900 },
-  { name: "Paws", department: "EHV", points: 800 },
-  { name: "Paws2.0", department: "EHV", points: 855 },
-  { name: "Whiskers", department: "EHV", photo: mcqueen, points: 100 },
-  { name: "Furball", department: "EHV", points: 90 },
-  { name: "Paws", department: "EHV", points: 80 },
-  { name: "Paws3.0", department: "EHV", points: 85 },
-  { name: "Whiskers", department: "EHV", photo: mcqueen, points: 50 },
-  { name: "Furball", department: "EHV", points: 10 },
-  { name: "Paws", department: "EHV", points: 0 },
-  { name: "Paws2.0", department: "EHV", points: 15 },
-  { name: "Whiskers", department: "EHV", photo: mcqueen, points: 25 },
-  { name: "Furball", department: "EHV", points: 30 },
-  { name: "Paws", department: "EHV", points: 40 },
-];
 const colors = ["#d6a21e", "#d6cd1e", "#bbbbbb"];
 
 const leaderboardColors = [
@@ -45,47 +28,43 @@ const leaderboardColors = [
 ];
 
 const CatListItem = ({
-  cat,
-  rank,
+  user,
   color,
-  image,
 }: {
-  cat: Cat;
-  rank: number;
+  user: ILeaderboardUser;
   color: string;
-  image?: string;
 }) => {
-  const rankOrder = rank + 1;
-
   return (
     <li className="cat-item">
       {/* <div className="cat-item__photo"> */}
       <div className="ranking" style={{ backgroundColor: color }}>
-        {rankOrder}
+        {user.rank}
       </div>
       {/* </div> */}
       <div className="cat-item__info">
         <h4>
-          {cat.name} ({cat.department}){" "}
+          {user.name} ({user.department}){" "}
         </h4>
       </div>
       <div className="cat-item__points">
-        <p>{cat.points}</p>
+        <p>{user.score}</p>
       </div>
     </li>
   );
 };
 
 const Dashboard = () => {
-  const [topThreeCats, setTopThreeCats] = useState<CatWithImage[] | undefined>(
+  const [topThreeCats, setTopThreeCats] = useState<
+    ILeaderboardUser[] | undefined
+  >(undefined);
+  const [allCats, setAllCats] = useState<ILeaderboardUser[] | undefined>(
     undefined
   );
-  const [allCats, setAllCats] = useState<Cat[] | undefined>(undefined);
   // const [newLeader, setNewLeader] = useState("");
 
   // Replace with actual logic to fetch cats data
 
-  async function findTopThreeCats(data: Cat[]) {
+  async function findTopThreeCats(data: ILeaderboardUser[]) {
     const sortedCats = data.sort((a, b) => b.points - a.points);
     const topThree = sortedCats.slice(0, 3);
     setTopThreeCats([
