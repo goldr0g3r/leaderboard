@@ -5,7 +5,7 @@ import React, { useState } from "react";
 const AdminPage = () => {
   async function SearchUserCall() {
     const [qurey, setQuery] = useState("");
-    const [filteredItems, setFilteredItems] = useState([]);
+    const [user, setUser] = useState<any>(undefined);
 
     const searchInput = document.getElementById(
       "search-input"
@@ -21,9 +21,6 @@ const AdminPage = () => {
     if (searchInputValue === "") {
       return;
     }
-
-    const response = await fetch(`/api/search?player=${searchInputValue}`);
-    const data = await response.json();
 
     console.log(data);
   }
