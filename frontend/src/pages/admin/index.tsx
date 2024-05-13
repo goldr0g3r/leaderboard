@@ -4,7 +4,8 @@ import React, { useState } from "react";
 
 const AdminPage = () => {
   async function SearchUserCall() {
-    const [state, setState] = useState(initialState);
+      const [qurey, setQuery] = useState('');
+          const [filteredItems, setFilteredItems] = useState([]);      
 
     const searchInput = document.getElementById(
       "search-input"
