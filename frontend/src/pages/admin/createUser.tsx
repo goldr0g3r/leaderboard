@@ -49,8 +49,9 @@ const CreateUser = () => {
             id="create-input"
             placeholder="Score"
           />
-          <button id="create-button">Edit</button>
-
+          <button className="button" id="create-button">
+            Edit
+          </button>
         </form>
       </div>{" "}
     </div>

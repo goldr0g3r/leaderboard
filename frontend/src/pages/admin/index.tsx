@@ -34,30 +34,45 @@ const AdminPage = () => {
 
   return (
     <div className="search-container">
-      <form role="search" id="search-form">
-        <label htmlFor="search-input">Search User</label>
-        <input type="text" name="player" id="search-input" />
-        <button id="search-button">Search</button>
+      <form className="form" role="search" id="search-form">
+        <label htmlFor="search-input" className="form-label">
+          Search User
+        </label>
+        <input
+          className="form-input"
+          type="text"
+          name="player"
+          id="search-input"
+        />
+        <button className="button" id="search-button">
+          Search
+        </button>
       </form>
       <div className="edit-user">
-        <h2>Edit User</h2>
         <form id="create-form">
-          <label htmlFor="create-input">Edit User</label>
+          <label className="form-label" htmlFor="create-input">
+            Edit User
+          </label>
           <input
+            className="form-input"
             type="text"
             name="player"
             id="create-input"
             placeholder="Score"
           />
-          <button id="create-button">Edit</button>
+          <button className="button" id="create-button">
+            Edit
+          </button>
         </form>
       </div>{" "}
       {/* */}
       <div className="edit-user">
-        <h2>Edit User</h2>
-        <form id="create-form">
-          <label htmlFor="create-input">Edit User</label>
+        <form className="form" id="create-form">
+          <label className="form-label" htmlFor="create-input">
+            Create User
+          </label>
           <input
+            className="form-input"
             type="text"
             name="player"
             id="create-input"
@@ -65,6 +80,7 @@ const AdminPage = () => {
           />
           <input
             type="text"
+            className="form-input"
             name="player"
             id="create-input"
             placeholder="Department"
@@ -72,11 +88,14 @@ const AdminPage = () => {
           <input
             type="text"
             name="player"
+            className="form-input"
             id="create-input"
             placeholder="Score"
           />
 
-          <button id="create-button">Create</button>
+          <button className="button" id="create-button">
+            Create
+          </button>
         </form>
       </div>{" "}
     </div>
