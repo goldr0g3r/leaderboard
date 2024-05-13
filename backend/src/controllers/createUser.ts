@@ -8,7 +8,7 @@ export default async function createUser(
 ): Promise<IUser | false> {
   try {
     const user = await userModel.create({
-      ntid,
+      ntid: ntid.toLowerCase(),
       name,
       department,
     });

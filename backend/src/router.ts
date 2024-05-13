@@ -46,6 +46,11 @@ router.get(
       });
 
     const response = await getUser(ntid);
+    if (!response)
+      return res.json({
+        status: false,
+        message: "Failed to get user",
+      });
 
     return res.json({
       status: true,

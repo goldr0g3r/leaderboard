@@ -6,9 +6,20 @@ export default async function editUser(
   user: IUser
 ): Promise<IUser | false> {
   try {
-    const updatedUser = await userModel.findOneAndUpdate({ ntid }, user, {
-      new: true,
-    });
+    const updatedUser = await userModel.findOneAndUpdate(
+      { ntid },
+      {
+        ...user,
+        ntid: ntid ? ntid.toLowerCase() : undefined,
+        totalScore: Object.values(user.individualScore).reduce(
+          (acc, score) => acc + score,
+          0
+        ),
+      },
+      {
+        new: true,
+      }
+    );
     if (!updatedUser) return false;
 
     return updatedUser;
