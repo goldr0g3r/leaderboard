@@ -36,17 +36,17 @@ ul {
 .container {
   width: 100%;
   max-width: 600px;
-  padding: 2em 0;
+  padding: 2em 2em;
   display: grid;
   grid-template-rows: 290px 1fr;
   grid-column-gap: 1em;
+  border-radius: 10px;
 }
 
 .leaders {
   background-color: var(--primary);
   background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-radius: 10px;
   padding-top: 2em;
   display: grid;
   grid-template-rows: 20% 1fr;
@@ -82,15 +82,7 @@ ul {
   height: 100%;
   border-radius: 50%;
 }
-.leaders li:first-child {
-  width: 108px;
-}
-.leaders li:nth-child(1) {
-  width: 130px;
-}
-.leaders li:last-child {
-  width: 145px;
-}
+
 .podium {
   padding: 1em;
   text-align: center;
@@ -190,9 +182,6 @@ ul {
 .cat-item__points img {
   width: 20px;
   cursor: pointer;
-}
-.cat-item__points img:last-child {
-  transform: scaleY(-1);
 }
 
 .ranking {

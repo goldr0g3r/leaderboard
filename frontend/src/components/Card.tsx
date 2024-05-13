@@ -6,30 +6,38 @@ export interface ICardProps {
   title: string;
   description: string;
   rankings: ILeaderboad[];
+  color?: string;
 }
 
 const Card = (data: ICardProps) => {
+  const topThreeColors = ["#FFD700", "#C0C0C0", "#CD7F32"];
+
   return (
-    <div className="game-leaderboard-card">
-      <div className="game-leaderboard-card__title">{data.title}</div>
-      <div className="board">
-        <div className="game-leaderboard-card__description">
-          {data.description}
-        </div>
-        <div className="game-leaderboard-card__rankings">
-          {data.rankings.map((ranking, index) => (
-            <div className="game-leaderboard-card__ranking" key={index}>
-              <div className="game-leaderboard-card__ranking__rank">
-                {index + 1}
-              </div>
-              <div className="ranking_item_info">
-                <h4>{ranking.name}</h4>
-              </div>
-              <div className="game-leaderboard-card__ranking__points">
-                <p>{ranking.points}</p>
-              </div>
-            </div>
-          ))}
+    <div className="card-container">
+      <div className="card">
+        <div className="leaders">
+          <h2>{data.title}</h2>
+          <div className="card board">
+            <p className="board-description">{data.description}</p>
+            {/* <div className="cat-item__list"> */}
+            {data.rankings.map((ranking, index) => (
+              <li className="cat-item">
+                <div
+                  className="ranking"
+                  style={{ backgroundColor: topThreeColors[index] }}
+                >
+                  {index + 1}
+                </div>
+                <div className="cat-item__info">
+                  <h4>{ranking.name}</h4>
+                </div>
+                <div className="cat-item__points">
+                  <p>{ranking.points}</p>
+                </div>
+              </li>
+            ))}
+            {/* </div> */}
+          </div>
         </div>
       </div>
     </div>
