@@ -8,8 +8,7 @@ const userSchema = new Schema<IUser>(
     department: { type: String, required: true },
     totalScore: { type: Number, default: 0 },
     individualScore: {
-      type: Map,
-      of: Number,
+      type: Object,
       default: {
         0: 0,
         1: 0,

@@ -4,7 +4,6 @@ import "./styles.css";
 
 export interface ICardProps {
   title: string;
-  description: string;
   rankings: ILeaderboardUser[];
 }
 
@@ -17,7 +16,6 @@ const Card = (data: ICardProps) => {
         <div className="leaders">
           <h2>{data.title}</h2>
           <div className="card board">
-            <p className="board-description">{data.description}</p>
             {data.rankings.map((ranking, index) => (
               <li className="cat-item">
                 <div

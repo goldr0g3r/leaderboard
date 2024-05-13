@@ -9,6 +9,6 @@ export interface ILeaderboardUser {
 export default interface ILeaderboard {
   overall: ILeaderboardUser[];
   games: {
-    [key: string]: ILeaderboardUser[];
+    [key: number]: ILeaderboardUser[];
   };
 }
