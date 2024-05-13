@@ -6,7 +6,6 @@ export interface ICardProps {
   title: string;
   description: string;
   rankings: ILeaderboad[];
-  color?: string;
 }
 
 const Card = (data: ICardProps) => {
@@ -24,7 +23,7 @@ const Card = (data: ICardProps) => {
               <li className="cat-item">
                 <div
                   className="ranking"
-                  style={{ backgroundColor: topThreeColors[index] }}
+                  style={{ backgroundColor: topThreeColors[index].toString() }}
                 >
                   {index + 1}
                 </div>
