@@ -21,6 +21,7 @@ const AdminPage = () => {
 
   async function searchHandler() {
     try {
+      setSuccess("");
       setError("");
       const response = await api.get<IApiResponse<IUser>>(
         `/user/get/${search}`
@@ -51,6 +52,7 @@ const AdminPage = () => {
 
   async function createHandler() {
     try {
+      setSuccess("");
       setError("");
       const user = await api.post<IApiResponse<IUser>>("/user/create", {
         ntid: createUser.ntid,
@@ -110,6 +112,9 @@ const AdminPage = () => {
         className="form"
         onSubmit={(e) => {
           e.preventDefault();
+          setUser(undefined);
+          setCreateStatus(false);
+          setNtid("");
           searchHandler();
         }}
       >
