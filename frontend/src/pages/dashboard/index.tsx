@@ -1,35 +1,28 @@
 import "./data";
 import "./style.css";
-import {
-  mcqueen,
-  mater,
-  fransisco,
-  first_place_medal,
-  second_place_medal,
-  third_place_medal,
-} from "../../assets";
+import { mcqueen, mater, fransisco } from "../../assets";
 
 import React, { useState, useEffect } from "react";
-import { allCats, Cat, CatWithImage } from "../../interface";
+import { Cat, CatWithImage } from "../../interface";
 import Card from "../../components/Card";
 import { sampleData } from "./data";
 
 const mockCats = [
   { name: "Whiskers", department: "EHV", photo: mcqueen, points: 1000 },
-  { name: "Furball", department: "EHV", points: 90 },
-  { name: "Paws", department: "EHV", points: 80 },
+  { name: "Furball", department: "EHV", points: 900 },
+  { name: "Paws", department: "EHV", points: 800 },
   { name: "Paws2.0", department: "EHV", points: 855 },
-  { name: "Whiskers", department: "EHV", photo: mcqueen, points: 1000 },
+  { name: "Whiskers", department: "EHV", photo: mcqueen, points: 100 },
   { name: "Furball", department: "EHV", points: 90 },
   { name: "Paws", department: "EHV", points: 80 },
-  { name: "Paws2.0", department: "EHV", points: 855 },
-  { name: "Whiskers", department: "EHV", photo: mcqueen, points: 1000 },
-  { name: "Furball", department: "EHV", points: 90 },
-  { name: "Paws", department: "EHV", points: 80 },
-  { name: "Paws2.0", department: "EHV", points: 855 },
-  { name: "Whiskers", department: "EHV", photo: mcqueen, points: 1000 },
-  { name: "Furball", department: "EHV", points: 90 },
-  { name: "Paws", department: "EHV", points: 80 },
+  { name: "Paws3.0", department: "EHV", points: 85 },
+  { name: "Whiskers", department: "EHV", photo: mcqueen, points: 50 },
+  { name: "Furball", department: "EHV", points: 10 },
+  { name: "Paws", department: "EHV", points: 0 },
+  { name: "Paws2.0", department: "EHV", points: 15 },
+  { name: "Whiskers", department: "EHV", photo: mcqueen, points: 25 },
+  { name: "Furball", department: "EHV", points: 30 },
+  { name: "Paws", department: "EHV", points: 40 },
 ];
 const colors = ["#d6a21e", "#d6cd1e", "#bbbbbb"];
 

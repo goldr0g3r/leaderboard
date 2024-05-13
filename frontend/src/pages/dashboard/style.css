@@ -167,10 +167,11 @@ ul {
 }
 
 .cat-item__info h4 {
-  font-family: "Roboto", serif;
+  font-family: "Poppins", serif;
   font-size: 1.2rem;
   color: var(--primary);
   margin-left: 20px;
+  font-weight: 400;
 }
 .cat-item__points {
   text-align: right;
