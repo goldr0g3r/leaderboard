@@ -1,6 +1,4 @@
 import { api } from "../../api";
-import ErrorMessage from "../../components/error";
-import SuccessMessage from "../../components/success";
 import IApiResponse from "../../interface/IApiResponse";
 import { IUser } from "../../interface/IUser";
 import "./style.css";
