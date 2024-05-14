@@ -193,86 +193,127 @@ const AdminPage = () => {
             />
             <div className="gamescore-grid">
               <div className="game-form">
-                <div className="form-with-heading">
-                  <h2>M-Parivahan</h2>
-                  <input
-                    type="number"
-                    name="player"
-                    className="form-input"
-                    id="create-input"
-                    placeholder="Game 1 Score"
-                    value={
-                      user.individualScore && user.individualScore[0]
-                        ? user.individualScore[0]
-                        : ""
-                    }
-                    onChange={(e) => {
-                      setUser({
-                        ...user,
-                        individualScore: {
-                          ...user.individualScore,
-                          0: Number(e.target.value),
-                        },
-                      });
-                    }}
-                  />
-                </div>
+                <h2>M-Parivahan</h2>
+                <input
+                  type="number"
+                  name="player"
+                  className="form-input"
+                  id="create-input"
+                  placeholder="Game 1 Score"
+                  value={
+                    user.individualScore && user.individualScore[0].score
+                      ? user.individualScore[0].score
+                      : ""
+                  }
+                  onChange={(e) => {
+                    setUser({
+                      ...user,
+                      individualScore: {
+                        ...user.individualScore,
+                        0: { score: Number(e.target.value), games: {} },
+                      },
+                    });
+                  }}
+                />
               </div>
               <div className="game-form">
                 <h2>Rohan, Soja</h2>
-
-                <div className="game-rohan">
-                  <div className="form-with-heading">
-                    <h3>Rubiks Cube</h3>
-                    <input
-                      className="form-input"
-                      type="number"
-                      name="rubiks-cube"
-                      placeholder="Rubiks Cube"
-                    />{" "}
-                  </div>
-                  <div className="form-with-heading">
-                    <h3>Carroms</h3>
-                    <input
-                      className="form-input"
-                      type="number"
-                      name="carroms"
-                      placeholder="Carroms"
-                    />{" "}
-                  </div>
-                  <div className="form-with-heading">
-                    <h3>Untangled Score</h3>
-                    <input
-                      className="form-input"
-                      type="number"
-                      name="untangled-score"
-                      placeholder="Untangled Score"
-                    />{" "}
-                  </div>
-                  <div className="form-with-heading">
-                    <h3>Foosball</h3>
-                    <input
-                      type="number"
-                      name="foosball"
-                      className="form-input"
-                      placeholder="foosball"
-                      value={
-                        user.individualScore && user.individualScore[1]
-                          ? user.individualScore[1]
-                          : ""
-                      }
-                      onChange={(e) => {
-                        setUser({
-                          ...user,
-                          individualScore: {
-                            ...user.individualScore,
-                            1: Number(e.target.value),
-                          },
-                        });
-                      }}
-                    />
-                  </div>
-                </div>
+                <input
+                  className="form-input"
+                  type="number"
+                  name="rubiks-cube"
+                  placeholder="Rubiks Cube"
+                  value={
+                    user.individualScore &&
+                    user.individualScore[1].games.rubiksCube
+                      ? user.individualScore[1].games.rubiksCube
+                      : ""
+                  }
+                  onChange={(e) => {
+                    setUser({
+                      ...user,
+                      individualScore: {
+                        ...user.individualScore,
+                        1: {
+                          score: 0,
+                          games: { rubiksCube: Number(e.target.value) },
+                        },
+                      },
+                    });
+                  }}
+                />
+                <input
+                  className="form-input"
+                  type="number"
+                  name="carroms"
+                  placeholder="Carroms"
+                  value={
+                    user.individualScore &&
+                    user.individualScore[1].games.carroms
+                      ? user.individualScore[1].games.carroms
+                      : ""
+                  }
+                  onChange={(e) => {
+                    setUser({
+                      ...user,
+                      individualScore: {
+                        ...user.individualScore,
+                        1: {
+                          score: 0,
+                          games: { carroms: Number(e.target.value) },
+                        },
+                      },
+                    });
+                  }}
+                />
+                <input
+                  className="form-input"
+                  type="number"
+                  name="untangled-score"
+                  placeholder="Untangled Score"
+                  value={
+                    user.individualScore &&
+                    user.individualScore[1].games.untangle
+                      ? user.individualScore[1].games.untangle
+                      : ""
+                  }
+                  onChange={(e) => {
+                    setUser({
+                      ...user,
+                      individualScore: {
+                        ...user.individualScore,
+                        1: {
+                          score: 0,
+                          games: { untangle: Number(e.target.value) },
+                        },
+                      },
+                    });
+                  }}
+                />
+                <input
+                  type="number"
+                  name="foosball"
+                  className="form-input"
+                  placeholder="foosball"
+                  value={
+                    user.individualScore &&
+                    user.individualScore[1].games.foosball
+                      ? user.individualScore[1].games.foosball
+                      : ""
+                  }
+                  onChange={(e) => {
+                    setUser({
+                      ...user,
+                      individualScore: {
+                        ...user.individualScore,
+                        1: {
+                          score: 0,
+                          games: { foosball: Number(e.target.value) },
+                        },
+                      },
+                    });
+                  }}
+                />
               </div>
               <div className="game-form">
                 <h2> Car Part Challenge</h2>
@@ -283,8 +324,8 @@ const AdminPage = () => {
                   id="create-input"
                   placeholder="Game 3 Score"
                   value={
-                    user.individualScore && user.individualScore[2]
-                      ? user.individualScore[2]
+                    user.individualScore && user.individualScore[2].score
+                      ? user.individualScore[2].score
                       : ""
                   }
                   onChange={(e) => {
@@ -292,7 +333,7 @@ const AdminPage = () => {
                       ...user,
                       individualScore: {
                         ...user.individualScore,
-                        2: Number(e.target.value),
+                        2: { score: Number(e.target.value), games: {} },
                       },
                     });
                   }}
@@ -307,8 +348,8 @@ const AdminPage = () => {
                   id="create-input"
                   placeholder="Game 4 Score"
                   value={
-                    user.individualScore && user.individualScore[3]
-                      ? user.individualScore[3]
+                    user.individualScore && user.individualScore[3].score
+                      ? user.individualScore[3].score
                       : ""
                   }
                   onChange={(e) => {
@@ -316,7 +357,10 @@ const AdminPage = () => {
                       ...user,
                       individualScore: {
                         ...user.individualScore,
-                        3: Number(e.target.value),
+                        3: {
+                          score: Number(e.target.value),
+                          games: {},
+                        },
                       },
                     });
                   }}
@@ -331,8 +375,8 @@ const AdminPage = () => {
                   id="create-input"
                   placeholder="Game 5 Score"
                   value={
-                    user.individualScore && user.individualScore[4]
-                      ? user.individualScore[4]
+                    user.individualScore && user.individualScore[4].score
+                      ? user.individualScore[4].score
                       : ""
                   }
                   onChange={(e) => {
@@ -340,7 +384,7 @@ const AdminPage = () => {
                       ...user,
                       individualScore: {
                         ...user.individualScore,
-                        4: Number(e.target.value),
+                        4: { score: Number(e.target.value), games: {} },
                       },
                     });
                   }}
@@ -355,8 +399,8 @@ const AdminPage = () => {
                   id="create-input"
                   placeholder="Game 6 Score"
                   value={
-                    user.individualScore && user.individualScore[5]
-                      ? user.individualScore[5]
+                    user.individualScore && user.individualScore[5].score
+                      ? user.individualScore[5].score
                       : ""
                   }
                   onChange={(e) => {
@@ -364,7 +408,7 @@ const AdminPage = () => {
                       ...user,
                       individualScore: {
                         ...user.individualScore,
-                        5: Number(e.target.value),
+                        5: { score: Number(e.target.value), games: {} },
                       },
                     });
                   }}
