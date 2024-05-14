@@ -461,30 +461,36 @@ const AdminPage = () => {
             }}
           >
             <label className="form-label" htmlFor="create-input">
-              Create User
+              Create User 
             </label>
-            <input
-              className="form-input"
-              type="text"
-              name="player"
-              id="create-input"
-              placeholder="name"
-              value={createUser.name}
-              onChange={(e) =>
-                setCreateUser({ ...createUser, name: e.target.value })
-              }
-            />
-            <input
-              type="text"
-              className="form-input"
-              name="player"
-              id="create-input"
-              placeholder="Department"
-              value={createUser.department}
-              onChange={(e) =>
-                setCreateUser({ ...createUser, department: e.target.value })
-              }
-            />
+            <div className="with-label">
+              <label className="input-label">Name</label>
+              <input
+                className="form-input"
+                type="text"
+                name="player"
+                id="create-input"
+                placeholder="name"
+                value={createUser.name}
+                onChange={(e) =>
+                  setCreateUser({ ...createUser, name: e.target.value })
+                }
+              />
+            </div>
+            <div className="with-label">
+              <label className="input-label">Dept.</label>
+              <input
+                type="text"
+                className="form-input"
+                name="player"
+                id="create-input"
+                placeholder="Department"
+                value={createUser.department}
+                onChange={(e) =>
+                  setCreateUser({ ...createUser, department: e.target.value })
+                }
+              />
+            </div>
             <button className="button" type="submit" id="create-button">
               Create
             </button>
