@@ -32,6 +32,9 @@ ul {
   justify-content: center;
   flex-wrap: wrap;
   gap: 1em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
 .leaderboard {
@@ -40,6 +43,9 @@ ul {
   height: 100vh;
   justify-content: center;
   align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
 .container {
@@ -58,7 +64,7 @@ ul {
   border-radius: 10px;
   padding-top: 0.5em;
   display: grid;
-  grid-template-rows: 10% 1fr;
+  /* grid-template-rows: 10% 1fr; */
   justify-items: center;
 }
 .leaders h2 {
@@ -108,7 +114,8 @@ ul {
 .podium p {
   color: rgb(73, 73, 73);
   margin: 5px 0;
-  font-size: 0.8rem;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .pod-1 {
@@ -121,8 +128,6 @@ ul {
 .board {
   background-color: var(--white);
   border-radius: 10px;
-  padding-left: 1em;
-  padding-right: 1em;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
   padding-top: 2em;
@@ -145,6 +150,7 @@ ul {
   grid-template-rows: minmax(40px, 1fr);
   grid-gap: 1em;
   align-items: center;
+  padding: 0 1em;
   border-bottom: 1px solid rgb(233, 233, 233);
   transition: background-color 0.2s;
 }
@@ -156,7 +162,7 @@ ul {
 }
 .cat-item__info h4 {
   font-family: "Poppins", serif;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: var(--primary);
   margin-left: 20px;
   font-weight: 400;
@@ -165,7 +171,8 @@ ul {
   text-align: right;
 }
 .cat-item__points p {
-  font-size: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 700;
   color: rgb(73, 73, 73);
 }
 .cat-item__points img {

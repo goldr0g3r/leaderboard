@@ -57,7 +57,7 @@ export default async function getLeaderboard(): Promise<ILeaderboard | false> {
         }
       }
 
-      gamesLeaderboard[i] = gameUsers.slice(0, 9);
+      gamesLeaderboard[i] = gameUsers.slice(0, 10);
     }
 
     return {
