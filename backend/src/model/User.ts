@@ -10,12 +10,35 @@ const userSchema = new Schema<IUser>(
     individualScore: {
       type: Object,
       default: {
-        0: 0,
-        1: 0,
-        2: 0,
-        3: 0,
-        4: 0,
-        5: 0,
+        0: {
+          score: 0,
+          games: {},
+        },
+        1: {
+          score: 0,
+          games: {
+            carroms: 0,
+            foosball: 0,
+            untangle: 0,
+            rubiksCube: 0,
+          },
+        },
+        2: {
+          score: 0,
+          games: {},
+        },
+        3: {
+          score: 0,
+          games: {},
+        },
+        4: {
+          score: 0,
+          games: {},
+        },
+        5: {
+          score: 0,
+          games: {},
+        },
       },
     },
   },
