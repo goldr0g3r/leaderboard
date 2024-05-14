@@ -236,7 +236,10 @@ const AdminPage = () => {
                         ...user.individualScore,
                         1: {
                           score: 0,
-                          games: { rubiksCube: Number(e.target.value) },
+                          games: {
+                            ...user.individualScore[1].games,
+                            rubiksCube: Number(e.target.value),
+                          },
                         },
                       },
                     });
@@ -260,7 +263,10 @@ const AdminPage = () => {
                         ...user.individualScore,
                         1: {
                           score: 0,
-                          games: { carroms: Number(e.target.value) },
+                          games: {
+                            ...user.individualScore[1].games,
+                            carroms: Number(e.target.value),
+                          },
                         },
                       },
                     });
@@ -284,7 +290,10 @@ const AdminPage = () => {
                         ...user.individualScore,
                         1: {
                           score: 0,
-                          games: { untangle: Number(e.target.value) },
+                          games: {
+                            ...user.individualScore[1].games,
+                            untangle: Number(e.target.value),
+                          },
                         },
                       },
                     });
@@ -308,7 +317,10 @@ const AdminPage = () => {
                         ...user.individualScore,
                         1: {
                           score: 0,
-                          games: { foosball: Number(e.target.value) },
+                          games: {
+                            ...user.individualScore[1].games,
+                            foosball: Number(e.target.value),
+                          },
                         },
                       },
                     });
