@@ -4,10 +4,15 @@ import helmet from "helmet";
 import morgan from "morgan";
 import router from "./router";
 import cors from "cors";
+import privateRouter from "./privateRouter";
+import { verifyUser } from "./middleware";
+import JwtLocalStrategy from "./auth/jwtStrategy";
+import passport from "passport";
 
 const app: Express = express();
 
 connectDB();
+JwtLocalStrategy(passport);
 
 app.use(helmet());
 app.use(cors());
@@ -21,6 +26,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.use("/api", router);
+app.use("/user", verifyUser, privateRouter);
 
 app.use((request, response) => {
   return response

@@ -17,7 +17,10 @@ const Card = (data: ICardProps) => {
           <h2>{data.title}</h2>
           <div className="card board">
             {data.rankings.map((ranking, index) => (
-              <li className="cat-item">
+              <li
+                className="cat-item"
+                key={`item-leader-rank${index}-${ranking.ntid}`}
+              >
                 <div
                   className="ranking"
                   style={{ backgroundColor: topThreeColors[index].toString() }}
