@@ -193,69 +193,86 @@ const AdminPage = () => {
             />
             <div className="gamescore-grid">
               <div className="game-form">
-                <h2>M-Parivahan</h2>
-                <input
-                  type="number"
-                  name="player"
-                  className="form-input"
-                  id="create-input"
-                  placeholder="Game 1 Score"
-                  value={
-                    user.individualScore && user.individualScore[0]
-                      ? user.individualScore[0]
-                      : ""
-                  }
-                  onChange={(e) => {
-                    setUser({
-                      ...user,
-                      individualScore: {
-                        ...user.individualScore,
-                        0: Number(e.target.value),
-                      },
-                    });
-                  }}
-                />
+                <div className="form-with-heading">
+                  <h2>M-Parivahan</h2>
+                  <input
+                    type="number"
+                    name="player"
+                    className="form-input"
+                    id="create-input"
+                    placeholder="Game 1 Score"
+                    value={
+                      user.individualScore && user.individualScore[0]
+                        ? user.individualScore[0]
+                        : ""
+                    }
+                    onChange={(e) => {
+                      setUser({
+                        ...user,
+                        individualScore: {
+                          ...user.individualScore,
+                          0: Number(e.target.value),
+                        },
+                      });
+                    }}
+                  />
+                </div>
               </div>
               <div className="game-form">
                 <h2>Rohan, Soja</h2>
-                <input
-                  className="form-input"
-                  type="number"
-                  name="rubiks-cube"
-                  placeholder="Rubiks Cube"
-                />{" "}
-                <input
-                  className="form-input"
-                  type="number"
-                  name="carroms"
-                  placeholder="Carroms"
-                />{" "}
-                <input
-                  className="form-input"
-                  type="number"
-                  name="untangled-score"
-                  placeholder="Untangled Score"
-                />{" "}
-                <input
-                  type="number"
-                  name="foosball"
-                  className="form-input"
-                  placeholder="foosball"
-                  value={
-                    user.individualScore && user.individualScore[1]
-                      ? user.individualScore[1]
-                      : ""
-                  }
-                  onChange={(e) => {
-                    setUser({
-                      ...user,
-                      individualScore: {
-                        ...user.individualScore,
-                        1: Number(e.target.value),
-                      },
-                    });
-                  }}
-                />
+
+                <div className="game-rohan">
+                  <div className="form-with-heading">
+                    <h3>Rubiks Cube</h3>
+                    <input
+                      className="form-input"
+                      type="number"
+                      name="rubiks-cube"
+                      placeholder="Rubiks Cube"
+                    />{" "}
+                  </div>
+                  <div className="form-with-heading">
+                    <h3>Carroms</h3>
+                    <input
+                      className="form-input"
+                      type="number"
+                      name="carroms"
+                      placeholder="Carroms"
+                    />{" "}
+                  </div>
+                  <div className="form-with-heading">
+                    <h3>Untangled Score</h3>
+                    <input
+                      className="form-input"
+                      type="number"
+                      name="untangled-score"
+                      placeholder="Untangled Score"
+                    />{" "}
+                  </div>
+                  <div className="form-with-heading">
+                    <h3>Foosball</h3>
+                    <input
+                      type="number"
+                      name="foosball"
+                      className="form-input"
+                      placeholder="foosball"
+                      value={
+                        user.individualScore && user.individualScore[1]
+                          ? user.individualScore[1]
+                          : ""
+                      }
+                      onChange={(e) => {
+                        setUser({
+                          ...user,
+                          individualScore: {
+                            ...user.individualScore,
+                            1: Number(e.target.value),
+                          },
+                        });
+                      }}
+                    />
+                  </div>
+                </div>
               </div>
               <div className="game-form">
                 <h2> Car Part Challenge</h2>
