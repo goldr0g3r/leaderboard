@@ -367,13 +367,14 @@ const AdminPage = () => {
           </form>
         </div>
       )}
-      {
+      <div className="message-container">
         <div className="success-message-container">
           {success && <h2 className="success-message">{success}</h2>}
         </div>
-      }
-      <div className="error-message-container">
-        {error && <h2 className="error-message">{error}</h2>}
+
+        <div className="error-message-container">
+          {error && <h2 className="error-message">{error}</h2>}
+        </div>
       </div>
     </div>
   );

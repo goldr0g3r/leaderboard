@@ -56,10 +56,14 @@ button:hover {
   background-color: #f3b700;
 }
 
+.message-container {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
 .success-message {
   color: #4bb543;
   font-size: 18px;
-  font-weight: bold;
   margin-top: 10px;
   border: 2px solid #4bb543;
   padding-left: 50px;
@@ -71,7 +75,6 @@ button:hover {
 .error-message {
   color: #ff0000;
   font-size: 18px;
-  font-weight: bold;
   margin-top: 10px;
   border: 2px solid #ff0000;
   padding-left: 50px;
@@ -79,4 +82,3 @@ button:hover {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-  
