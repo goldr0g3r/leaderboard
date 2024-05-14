@@ -119,11 +119,14 @@ button:hover {
 .game-rohan {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   margin-top: 25px;
   width: 100%;
 }
 
-.game-rohan {
+.game-form-rohan {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
