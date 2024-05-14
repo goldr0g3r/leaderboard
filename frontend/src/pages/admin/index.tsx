@@ -369,11 +369,11 @@ const AdminPage = () => {
       )}
       {
         <div className="success-message-container">
-          {success && <SuccessMessage message={success} />}
+          {success && <h2 className="success-message">{success}</h2>}
         </div>
       }
       <div className="error-message-container">
-        {error && <ErrorMessage message={error} />}
+        {error && <h2 className="error-message">{error}</h2>}
       </div>
     </div>
   );

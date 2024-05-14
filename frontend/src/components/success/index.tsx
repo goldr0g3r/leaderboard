@@ -8,7 +8,7 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({ message }) => {
   return (
     <div className="success-container">
       <div className="xd-message msg-success">
-        <div className="xd-message-icon">
+        <div className="xd-success-icon">
           <img src="success-svgrepo-com.svg" alt="success" />
         </div>
         <div className="xd-message-content">
