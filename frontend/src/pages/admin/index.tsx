@@ -376,7 +376,9 @@ const AdminPage = () => {
           {success}
         </h2>
       }
-      {error && <ErrorMessage message={error} />}
+      <div className="error-message-container">
+        {error && <ErrorMessage message={error} />}
+      </div>
     </div>
   );
 };

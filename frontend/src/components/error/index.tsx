@@ -7,7 +7,6 @@ type ErrorMessageProps = {
 
 const ErrorMessage: React.FC<ErrorMessageProps> = ({ message }) => {
   return (
-    <div className="error-container">
       <div className="xd-message msg-danger">
         <div className="xd-message-icon">
           <i className="ion-close-round"></i>
@@ -19,7 +18,6 @@ const ErrorMessage: React.FC<ErrorMessageProps> = ({ message }) => {
           <i className="close-icon ion-close-round"></i>
         </a>
       </div>
-    </div>
   );
 };
 
