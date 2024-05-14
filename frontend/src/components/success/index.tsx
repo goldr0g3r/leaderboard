@@ -14,7 +14,7 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({ message }) => {
         <div className="xd-message-content">
           <p>{message}</p>
         </div>
-        <a href="#" className="xd-message-close">
+        <a href="\#" className="xd-message-close">
           <i className="close-icon ion-close-round"></i>
         </a>
       </div>
