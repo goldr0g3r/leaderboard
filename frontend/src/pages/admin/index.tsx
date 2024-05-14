@@ -217,8 +217,13 @@ const AdminPage = () => {
                 />
               </div>
               <div className="game-form">
-                <h2>ROhan, Soja</h2>
-
+                <h2>Rohan, Soja</h2>
+                <input
+                  className="form-input"
+                  type="number"
+                  name="rubiks-cube"
+                  placeholder="Rubiks Cube"
+                />
                 <input
                   type="number"
                   name="player"
