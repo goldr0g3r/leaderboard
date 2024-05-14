@@ -7,7 +7,7 @@ import ILeaderboard, {
   ILeaderboardUser,
   ILeaderboardUserWithImage,
 } from "../../interface/ILeaderboard";
-import { api } from "../../api";
+import api from "../../api";
 import IApiResponse from "../../interface/IApiResponse";
 
 const colors = ["#d6a21e", "#d6cd1e", "#bbbbbb"];

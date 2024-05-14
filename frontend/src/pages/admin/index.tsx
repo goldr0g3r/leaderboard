@@ -1,4 +1,4 @@
-import { api } from "../../api";
+import api from "../../api";
 import IApiResponse from "../../interface/IApiResponse";
 import { IUser } from "../../interface/IUser";
 import "./style.css";
