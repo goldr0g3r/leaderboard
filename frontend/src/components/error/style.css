@@ -1,11 +1,12 @@
-    .error-container {
-  width: 38%;
-  position: absolute;
+.error-container {
+  display: flex;
+  width: 500px;
+  position: relative;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 100%;
+  transform: translate(50%, 275%);
   background: #fff;
-  padding: 1em 2em;
+  padding: 1em 1em;
 
   .heading {
     position: relative;
@@ -89,15 +90,28 @@
 }
 
 .msg-danger {
-  border: 1px solid #b05150;
+  border: 2px solid #b05150;
 
   .xd-message-icon {
     background: #b05150;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .xd-message-icon img {
+    width: 30px;
+    height: 30px;
   }
 
   .xd-message-content,
   .xd-message-close {
     color: #b05150;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 1rem;
   }
 
   .xd-message-close {
