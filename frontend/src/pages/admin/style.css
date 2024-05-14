@@ -15,15 +15,17 @@
   text-align: center;
 }
 
-.form {
-  flex-wrap: wrap;
+.search-form-d {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.form {
   margin: 10px 0;
   padding: 15px;
   border-radius: 8px 8px 0 0;
-  gap: 10px;
 }
 
 .form-input {
@@ -44,12 +46,13 @@
   border-radius: 5px;
   margin-left: 10px;
   cursor: pointer;
-  margin-top: 10px;
 }
 
 .form-label {
+  margin-top: 20px;
   font-size: 18px;
   font-weight: bold;
+  text-align: left;
   color: #333;
   margin-bottom: 5px;
 }

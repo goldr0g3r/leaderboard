@@ -109,7 +109,7 @@ const AdminPage = () => {
     <div className="search-container">
       <h1>Admin Page</h1>
       <form
-        className="form"
+        className="game-form"
         onSubmit={(e) => {
           e.preventDefault();
           setUser(undefined);
@@ -118,33 +118,33 @@ const AdminPage = () => {
           searchHandler();
         }}
       >
-        <label htmlFor="search-input" className="form-label">
-          Search User
-        </label>
-        <input
-          className="form-input"
-          type="text"
-          name="player"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <button className="button" type="submit" id="search-button">
-          Search
-        </button>
-
-        {(user || createStatus) && (
-          <button
-            className="button"
-            onClick={() => {
-              setUser(undefined);
-              setCreateStatus(false);
-              setSearch("");
-              setNtid("");
-            }}
-          >
-            Clear Selection
+        <h2 className="form-label">Search User</h2>
+        <div className="search-form-d">
+          <input
+            className="form-input"
+            type="text"
+            name="player"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <button className="button" type="submit" id="search-button">
+            Search
           </button>
-        )}
+
+          {(user || createStatus) && (
+            <button
+              className="button"
+              onClick={() => {
+                setUser(undefined);
+                setCreateStatus(false);
+                setSearch("");
+                setNtid("");
+              }}
+            >
+              Clear Selection
+            </button>
+          )}
+        </div>
       </form>
       {user && (
         <div className="edit-user">
@@ -155,9 +155,7 @@ const AdminPage = () => {
               editHandler();
             }}
           >
-            <label className="form-label" htmlFor="create-input">
-              Edit User
-            </label>
+            <h1 className="form-label">Edit User</h1>
 
             <label className="input-label">NTID</label>
             <input
@@ -460,9 +458,9 @@ const AdminPage = () => {
               createHandler();
             }}
           >
-            <label className="form-label" htmlFor="create-input">
-              Create User 
-            </label>
+            <h1 className="form-label">
+              Create User
+            </h1>
             <div className="with-label">
               <label className="input-label">Name</label>
               <input

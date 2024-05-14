@@ -28,6 +28,23 @@ const leaderboardColors = [
   "#9e9e1e",
   "#9e9e9e",
   "#1e9e9e",
+  "#bf1e9e",
+  "#9e1ebf",
+  "#9e1e1e",
+  "#9e1e9e",
+  "#9e9e1e",
+  "#9e9e9e",
+  "#1e9e9e",
+  "#9e9e1e",
+  "#9e9e9e",
+  "#1e9e9e",
+  "#bf1e9e",
+  "#9e1ebf",
+  "#9e1e1e",
+  "#9e1e9e",
+  "#9e9e1e",
+  "#9e9e9e",
+  "#1e9e9e",
 ];
 
 const CatListItem = ({
@@ -150,16 +167,34 @@ const Dashboard = () => {
         </div>
       </div>
       <div className="games">
-        <Card title="mParivaahan" rankings={leaderboard.games[0] || []} />
-        <Card title="Fun Games" rankings={leaderboard.games[1] || []} />
-        <Card title="Guess that part" rankings={leaderboard.games[2] || []} />
+        <Card
+          title="mParivaahan"
+          colors={leaderboardColors}
+          rankings={leaderboard.games[0] || []}
+        />
+        <Card
+          title="Fun Games"
+          colors={leaderboardColors}
+          rankings={leaderboard.games[1] || []}
+        />
+        <Card
+          title="Guess that part"
+          colors={leaderboardColors}
+          rankings={leaderboard.games[2] || []}
+        />
         <Card
           title="Can you ID that car"
+          colors={leaderboardColors}
           rankings={leaderboard.games[3] || []}
         />
-        <Card title="PictoGuess" rankings={leaderboard.games[4] || []} />
+        <Card
+          title="PictoGuess"
+          colors={leaderboardColors}
+          rankings={leaderboard.games[4] || []}
+        />
         <Card
           title="Two truths and a lie"
+          colors={leaderboardColors}
           rankings={leaderboard.games[5] || []}
         />
       </div>

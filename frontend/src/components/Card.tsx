@@ -5,11 +5,10 @@ import "./styles.css";
 export interface ICardProps {
   title: string;
   rankings: ILeaderboardUser[];
+  colors: string[];
 }
 
 const Card = (data: ICardProps) => {
-  const topThreeColors = ["#FFD700", "#C0C0C0", "#CD7F32"];
-
   return (
     <div className="card-container">
       <div className="card">
@@ -23,7 +22,7 @@ const Card = (data: ICardProps) => {
               >
                 <div
                   className="ranking"
-                  style={{ backgroundColor: topThreeColors[index].toString() }}
+                  style={{ backgroundColor: data.colors[index] }}
                 >
                   {ranking.rank}
                 </div>
