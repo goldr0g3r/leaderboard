@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-const LodingScreen = () => {
+const LoadingScreen = () => {
   return (
     <div className="portfolio-loader">
       <div className="sun"></div>
@@ -17,4 +17,4 @@ const LodingScreen = () => {
   );
 };
 
-export default LodingScreen;
+export default LoadingScreen;
