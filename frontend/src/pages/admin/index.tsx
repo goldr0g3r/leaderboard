@@ -158,6 +158,8 @@ const AdminPage = () => {
             <label className="form-label" htmlFor="create-input">
               Edit User
             </label>
+
+            <label className="input-label">NTID</label>
             <input
               className="form-input"
               type="text"
@@ -169,6 +171,8 @@ const AdminPage = () => {
                 setUser({ ...user, ntid: e.target.value });
               }}
             />
+            <label className="input-label">Name</label>
+
             <input
               className="form-input"
               type="text"
@@ -180,6 +184,8 @@ const AdminPage = () => {
                 setUser({ ...user, name: e.target.value });
               }}
             />
+            <label className="input-label">Dept.</label>
+
             <input
               type="text"
               className="form-input"
@@ -218,114 +224,126 @@ const AdminPage = () => {
               </div>
               <div className="game-form">
                 <h2>Rohan, Soja</h2>
-                <input
-                  className="form-input"
-                  type="number"
-                  name="rubiks-cube"
-                  placeholder="Rubiks Cube"
-                  value={
-                    user.individualScore &&
-                    user.individualScore[1].games.rubiksCube
-                      ? user.individualScore[1].games.rubiksCube
-                      : ""
-                  }
-                  onChange={(e) => {
-                    setUser({
-                      ...user,
-                      individualScore: {
-                        ...user.individualScore,
-                        1: {
-                          score: 0,
-                          games: {
-                            ...user.individualScore[1].games,
-                            rubiksCube: Number(e.target.value),
+                <div className="with-label">
+                  <label className="input-label">Rubiks Cube</label>
+                  <input
+                    className="form-input"
+                    type="number"
+                    name="rubiks-cube"
+                    placeholder="Rubiks Cube"
+                    value={
+                      user.individualScore &&
+                      user.individualScore[1].games.rubiksCube
+                        ? user.individualScore[1].games.rubiksCube
+                        : ""
+                    }
+                    onChange={(e) => {
+                      setUser({
+                        ...user,
+                        individualScore: {
+                          ...user.individualScore,
+                          1: {
+                            score: 0,
+                            games: {
+                              ...user.individualScore[1].games,
+                              rubiksCube: Number(e.target.value),
+                            },
                           },
                         },
-                      },
-                    });
-                  }}
-                />
-                <input
-                  className="form-input"
-                  type="number"
-                  name="carroms"
-                  placeholder="Carroms"
-                  value={
-                    user.individualScore &&
-                    user.individualScore[1].games.carroms
-                      ? user.individualScore[1].games.carroms
-                      : ""
-                  }
-                  onChange={(e) => {
-                    setUser({
-                      ...user,
-                      individualScore: {
-                        ...user.individualScore,
-                        1: {
-                          score: 0,
-                          games: {
-                            ...user.individualScore[1].games,
-                            carroms: Number(e.target.value),
+                      });
+                    }}
+                  />
+                </div>
+                <div className="with-label">
+                  <label className="input-label">Carroms</label>
+                  <input
+                    className="form-input"
+                    type="number"
+                    name="carroms"
+                    placeholder="Carroms"
+                    value={
+                      user.individualScore &&
+                      user.individualScore[1].games.carroms
+                        ? user.individualScore[1].games.carroms
+                        : ""
+                    }
+                    onChange={(e) => {
+                      setUser({
+                        ...user,
+                        individualScore: {
+                          ...user.individualScore,
+                          1: {
+                            score: 0,
+                            games: {
+                              ...user.individualScore[1].games,
+                              carroms: Number(e.target.value),
+                            },
                           },
                         },
-                      },
-                    });
-                  }}
-                />
-                <input
-                  className="form-input"
-                  type="number"
-                  name="untangled-score"
-                  placeholder="Untangled Score"
-                  value={
-                    user.individualScore &&
-                    user.individualScore[1].games.untangle
-                      ? user.individualScore[1].games.untangle
-                      : ""
-                  }
-                  onChange={(e) => {
-                    setUser({
-                      ...user,
-                      individualScore: {
-                        ...user.individualScore,
-                        1: {
-                          score: 0,
-                          games: {
-                            ...user.individualScore[1].games,
-                            untangle: Number(e.target.value),
+                      });
+                    }}
+                  />
+                </div>
+                <div className="with-label">
+                  <label className="input-label">Untangled Score</label>
+                  <input
+                    className="form-input"
+                    type="number"
+                    name="untangled-score"
+                    placeholder="Untangled Score"
+                    value={
+                      user.individualScore &&
+                      user.individualScore[1].games.untangle
+                        ? user.individualScore[1].games.untangle
+                        : ""
+                    }
+                    onChange={(e) => {
+                      setUser({
+                        ...user,
+                        individualScore: {
+                          ...user.individualScore,
+                          1: {
+                            score: 0,
+                            games: {
+                              ...user.individualScore[1].games,
+                              untangle: Number(e.target.value),
+                            },
                           },
                         },
-                      },
-                    });
-                  }}
-                />
-                <input
-                  type="number"
-                  name="foosball"
-                  className="form-input"
-                  placeholder="foosball"
-                  value={
-                    user.individualScore &&
-                    user.individualScore[1].games.foosball
-                      ? user.individualScore[1].games.foosball
-                      : ""
-                  }
-                  onChange={(e) => {
-                    setUser({
-                      ...user,
-                      individualScore: {
-                        ...user.individualScore,
-                        1: {
-                          score: 0,
-                          games: {
-                            ...user.individualScore[1].games,
-                            foosball: Number(e.target.value),
+                      });
+                    }}
+                  />
+                </div>
+                <div className="with-label">
+                  <label className="input-label">Foosball</label>
+                  <input
+                    type="number"
+                    name="foosball"
+                    className="form-input"
+                    placeholder="foosball"
+                    value={
+                      user.individualScore &&
+                      user.individualScore[1].games.foosball
+                        ? user.individualScore[1].games.foosball
+                        : ""
+                    }
+                    onChange={(e) => {
+                      setUser({
+                        ...user,
+                        individualScore: {
+                          ...user.individualScore,
+                          1: {
+                            score: 0,
+                            games: {
+                              ...user.individualScore[1].games,
+                              foosball: Number(e.target.value),
+                            },
                           },
                         },
-                      },
-                    });
-                  }}
-                />
+                      });
+                    }}
+                  />
+                </div>
               </div>
               <div className="game-form">
                 <h2> Car Part Challenge</h2>
