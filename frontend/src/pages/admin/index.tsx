@@ -1,4 +1,5 @@
 import { api } from "../../api";
+import ErrorMessage from "../../components/error";
 import IApiResponse from "../../interface/IApiResponse";
 import { IUser } from "../../interface/IUser";
 import "./style.css";
@@ -375,16 +376,7 @@ const AdminPage = () => {
           {success}
         </h2>
       }
-      {error && (
-        <h2
-          className="error"
-          style={{
-            color: "red",
-          }}
-        >
-          {error}
-        </h2>
-      )}
+      {error && <ErrorMessage message={error} />}
     </div>
   );
 };

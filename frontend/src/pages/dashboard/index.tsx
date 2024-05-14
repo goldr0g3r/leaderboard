@@ -2,6 +2,7 @@ import "./style.css";
 import { mcqueen, mater, fransisco } from "../../assets";
 import { useState, useEffect } from "react";
 import Card from "../../components/Card";
+import LoadingScreen from "../../components/loading";
 import ILeaderboard, {
   ILeaderboardUser,
   ILeaderboardUserWithImage,
@@ -164,7 +165,9 @@ const Dashboard = () => {
       </div>
     </div>
   ) : (
-    <div>Loading</div>
+    <div>
+      <LoadingScreen />
+    </div>
   );
 };
 export default Dashboard;

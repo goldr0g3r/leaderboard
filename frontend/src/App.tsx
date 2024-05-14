@@ -6,11 +6,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AdminPage from "./pages/admin";
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "login",
     element: <LoginPage />,
   },
   {
-    path: "dashboard",
+    path: "/",
     element: <Dashboard />,
   },
   {
