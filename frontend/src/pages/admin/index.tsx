@@ -223,13 +223,24 @@ const AdminPage = () => {
                   type="number"
                   name="rubiks-cube"
                   placeholder="Rubiks Cube"
-                />
+                />{" "}
+                <input
+                  className="form-input"
+                  type="number"
+                  name="carroms"
+                  placeholder="Carroms"
+                />{" "}
+                <input
+                  className="form-input"
+                  type="number"
+                  name="untangled-score"
+                  placeholder="Untangled Score"
+                />{" "}
                 <input
                   type="number"
-                  name="player"
+                  name="foosball"
                   className="form-input"
-                  id="create-input"
-                  placeholder="Game 2 Score"
+                  placeholder="foosball"
                   value={
                     user.individualScore && user.individualScore[1]
                       ? user.individualScore[1]
@@ -344,7 +355,7 @@ const AdminPage = () => {
               </div>
             </div>
             <button className="button" id="create-button">
-              Edit
+              Update User
             </button>
           </form>
         </div>
