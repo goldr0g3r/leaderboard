@@ -24,7 +24,7 @@ const AdminPage = () => {
       setSuccess("");
       setError("");
       const response = await api.get<IApiResponse<IUser>>(
-        `/user/get/${search}`
+        `/auth/user/get/${search}`
       );
 
       if (!response.data) {
@@ -54,7 +54,7 @@ const AdminPage = () => {
     try {
       setSuccess("");
       setError("");
-      const user = await api.post<IApiResponse<IUser>>("/user/create", {
+      const user = await api.post<IApiResponse<IUser>>("/auth/user/create", {
         ntid: createUser.ntid,
         name: createUser.name,
         department: createUser.department,
@@ -83,7 +83,7 @@ const AdminPage = () => {
       setSuccess("");
       setError("");
       const new_user = await api.patch<IApiResponse<IUser>>(
-        `/user/edit/${ntid}`,
+        `/auth/user/edit/${ntid}`,
         user
       );
 

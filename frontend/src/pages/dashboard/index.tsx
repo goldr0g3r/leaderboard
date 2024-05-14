@@ -79,7 +79,7 @@ const Dashboard = () => {
   async function fetchLeaderBoard() {
     try {
       const response = await api.get<IApiResponse<ILeaderboard>>(
-        "/leaderboard"
+        "/public/leaderboard"
       );
       if (!response.data.data) {
         return;
