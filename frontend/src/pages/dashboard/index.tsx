@@ -7,7 +7,7 @@ import ILeaderboard, {
   ILeaderboardUser,
   ILeaderboardUserWithImage,
 } from "../../interface/ILeaderboard";
-import { api } from "../../api";
+import api from "../../api";
 import IApiResponse from "../../interface/IApiResponse";
 
 const colors = ["#d6a21e", "#d6cd1e", "#bbbbbb"];
@@ -79,7 +79,7 @@ const Dashboard = () => {
   async function fetchLeaderBoard() {
     try {
       const response = await api.get<IApiResponse<ILeaderboard>>(
-        "/leaderboard"
+        "/public/leaderboard"
       );
       if (!response.data.data) {
         return;
