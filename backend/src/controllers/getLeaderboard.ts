@@ -33,13 +33,13 @@ export default async function getLeaderboard(): Promise<ILeaderboard | false> {
     const gamesLeaderboard: { [key: number]: ILeaderboardUser[] } = {};
     for (let i = 0; i < 6; i++) {
       const gameUsers = allUsers
-        .sort((a, b) => b.individualScore[i] - a.individualScore[i])
+        .sort((a, b) => b.individualScore[i].score - a.individualScore[i].score)
         .map((user, index) => {
           return {
             ntid: user.ntid,
             name: user.name,
             department: user.department,
-            score: user.individualScore[i],
+            score: user.individualScore[i].score,
             rank: index + 1,
           };
         });
