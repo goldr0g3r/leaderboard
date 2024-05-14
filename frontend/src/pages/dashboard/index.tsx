@@ -165,9 +165,7 @@ const Dashboard = () => {
       </div>
     </div>
   ) : (
-    <div>
-      <LoadingScreen />
-    </div>
+    <LoadingScreen />
   );
 };
 export default Dashboard;

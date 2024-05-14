@@ -25,8 +25,8 @@ app.get("/", (req: Request, res: Response) => {
   res.send("Hello World");
 });
 
-app.use("/api", router);
-app.use("/user", verifyUser, privateRouter);
+app.use("/api/public", router);
+app.use("/api/auth", verifyUser, privateRouter);
 
 app.use((request, response) => {
   return response
